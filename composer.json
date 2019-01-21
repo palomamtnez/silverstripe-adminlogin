@@ -1,28 +1,33 @@
 {
     "name": "axyr/silverstripe-adminlogin",
     "description": "Use a custom login screen to log in to the admin section",
-    "type": "silverstripe-module",
+    "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "login", "module", "cms"],
         "license": "BSD-3-Clause",
-    "authors": [
-    {
+    "authors": [{
         "name": "Martijn van Nieuwenhoven",
         "email": "info@axyrmedia.nl"
-    }
-    ],
+    }],
     "require":
     {
-        "php": ">=5.4",
-        "silverstripe/framework": "^3.1.0"
+        "silverstripe/framework": "^4"
     },
     "require-dev": {
-        "phpunit/PHPUnit": "~3.7@stable"
+        "phpunit/PHPUnit": "~5.7@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "Axyr\\SilverStripeAdminLogin\\": "src/",
+            "Axyr\\SilverStripeAdminLogin\\Tests\\": "tests/"
+        }
     },
     "extra": {
-        "installer-name": "adminlogin",
-		"screenshots": [
-	      "images/screenshot.png"
-	    ]
+        "screenshots": [
+          "images/screenshot.png"
+        ],
+        "expose": [
+            "client"
+        ]
     },
     "target-dir": "adminlogin"
 }

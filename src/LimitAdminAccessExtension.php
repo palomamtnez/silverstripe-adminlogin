@@ -1,5 +1,9 @@
 <?php
 
+namespace Axyr\SilverStripeAdminLogin;
+
+use SilverStripe\Core\Extension;
+
 /**
  * Class LimitAdminAccessExtension.
  *

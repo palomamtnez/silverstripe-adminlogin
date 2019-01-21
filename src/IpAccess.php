@@ -1,5 +1,9 @@
 <?php
 
+namespace Axyr\SilverStripeAdminLogin;
+
+use SilverStripe\Core\Config\Config;
+
 /**
  * Check Access based on remote IP address.
  *
@@ -12,7 +16,7 @@
  *
  * @return false || string : entry the ip address was matched against
  */
-class IpAccess extends Object
+class IpAccess
 {
     /**
      * @var array
@@ -58,11 +62,6 @@ class IpAccess extends Object
      */
     public function getAllowedIps()
     {
-        if (!empty($this->allowedIps)) {
-            Deprecation::notice('1.1', 'Use the "IpAccess.allowed_ips" config setting instead');
-            self::config()->allowed_ips = $this->allowedIps;
-        }
-
         return self::$allowed_ips ? self::$allowed_ips : (array) self::config()->allowed_ips;
     }
 

@@ -1,5 +1,11 @@
 <?php
 
+namespace Axyr\SilverStripeAdminLogin;
+
+use SilverStripe\Security\Security;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Control\Controller;
+use SilverStripe\Security\MemberAuthenticator\ChangePasswordForm;
 
 /**
  * Class AdminSecurity.
@@ -37,11 +43,12 @@ class AdminSecurity extends Security
 
         if (Config::inst()->get('AdminLogin', 'UseTheme') !== true) {
             // this prevents loading frontend css and javscript files
-            Object::useCustomClass('Page_Controller', 'AdminLoginPage_Controller');
-            Requirements::css('adminlogin/css/style.css');
+            Injector::inst()->registerService(new AdminLoginPageController(), 'PageController');
+
+            Requirements::css('axyr/silverstripe-adminlogin:client/css/style.css');
         }
 
-        Object::useCustomClass('MemberLoginForm', 'AdminLoginForm');
+        Injector::inst()->registerService(new AdminLoginForm(), 'MemberLoginForm');
     }
 
     /**

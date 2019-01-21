@@ -1,5 +1,10 @@
 <?php
 
+namespace Axyr\SilverStripeAdminLogin;
+
+use SilverStripe\Core\Extension;
+use SilverStripe\Control\Controller;
+
 /**
  * Custom Admin Login form screen.
  *
@@ -17,8 +22,9 @@ class AdminLoginExtension extends Extension
     public function onBeforeSecurityLogin()
     {
         $backUrl = $this->owner->getRequest()->getVar('BackURL');
+
         if (strstr($backUrl, '/admin/')) {
-            if (Controller::curr()->class != 'AdminSecurity') {
+            if (Controller::curr() instanceof AdminSecurity::class) {
                 $link = 'AdminSecurity/login'.'?BackURL='.urlencode($backUrl);
 
                 return $this->owner->redirect($link);

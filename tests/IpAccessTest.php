@@ -1,10 +1,10 @@
 <?php
 
-/**
- * Class IpAccessTest.
- *
- * @mixin PHPUnit_Framework_TestCase
- */
+namespace Axyr\SilverStripeAdminLogin\Tests;
+
+use SilverStripe\Dev\SapphireTest;
+use SilverStripe\Core\Config\Config;
+
 class IpAccessTest extends SapphireTest
 {
     protected $allowedIps = [

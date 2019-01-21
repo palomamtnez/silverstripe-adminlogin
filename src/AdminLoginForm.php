@@ -1,8 +1,12 @@
 <?php
 
-/**
- * Class AdminLoginForm.
- */
+namespace Axyr\SilverStripeAdminLogin;
+
+use SilverStripe\Security\MemberAuthenticator\MemberLoginForm;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\View\Requirements;
+use SilverStripe\Security\Member;
+
 class AdminLoginForm extends MemberLoginForm
 {
     public function __construct($controller, $name, $fields = null, $actions = null, $checkCurrentUser = true)
@@ -37,7 +41,7 @@ JS
     {
         if ($data['Email']) {
             /* @var $member Member */
-            if ($member = Member::get()->where("Email = '".Convert::raw2sql($data['Email'])."'")->first()) {
+            if ($member = Member::get()->filter("Email", $data['Email'])->first()) {
                 $token = $member->generateAutologinTokenAndStoreHash();
                 $this->sendPasswordResetLinkEmail($member, $token);
             }
