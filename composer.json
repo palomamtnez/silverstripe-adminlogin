@@ -28,6 +28,5 @@
         "expose": [
             "client"
         ]
-    },
-    "target-dir": "adminlogin"
+    }
 }
