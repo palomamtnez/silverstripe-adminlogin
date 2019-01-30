@@ -24,7 +24,7 @@ class AdminLoginExtension extends Extension
         $backUrl = $this->owner->getRequest()->getVar('BackURL');
 
         if (strstr($backUrl, '/admin/')) {
-            if (Controller::curr() instanceof AdminSecurity::class) {
+            if (Controller::curr() instanceof AdminSecurity) {
                 $link = 'AdminSecurity/login'.'?BackURL='.urlencode($backUrl);
 
                 return $this->owner->redirect($link);

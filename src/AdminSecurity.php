@@ -66,15 +66,16 @@ class AdminSecurity extends Security
      */
     public static function isAdminLogin()
     {
-        return strstr(self::getBackUrl(), '/admin/');
+        return strstr(Controller::curr()->getBackUrl(), '/admin/');
     }
 
     /**
      * @return string
      */
-    public static function getBackUrl()
+    public function getBackUrl()
     {
         $request = Controller::curr()->getRequest();
+
         if ($url = $request->requestVar('BackURL')) {
             return $url;
         }

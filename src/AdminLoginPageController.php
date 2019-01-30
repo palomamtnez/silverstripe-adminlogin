@@ -2,6 +2,8 @@
 
 namespace Axyr\SilverStripeAdminLogin;
 
+use SilverStripe\CMS\Controllers\ContentController;
+
 /**
  * Class AdminLoginPage_Controller.
  *
