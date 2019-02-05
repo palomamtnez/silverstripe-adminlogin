@@ -6,6 +6,7 @@ silverstripe-adminlogin
 [![Packagist](https://img.shields.io/packagist/v/axyr/silverstripe-adminlogin.svg)](https://packagist.org/packages/axyr/silverstripe-adminlogin)
 
 ##Installation
+
 Run ```composer require axyr/silverstripe-adminlogin```
 
 Use a custom login screen when log in to the admin section.
@@ -20,6 +21,7 @@ The following formats are supported :
 * 192.168.1.*
 
 ## Use theme styles/scripts
+
 If you want to use your theme styles/scripts you can do the following:
 
 * Add the following to a config file (e.g. ```mysite/_config/_config.yml```):
@@ -30,6 +32,7 @@ AdminLogin:
 * Optionally copy ```templates/AdminLogin.ss``` to your theme folder (& edit it to your liking).
 
 ## Screenshot
+
 ![Screenshot](https://raw.github.com/axyr/silverstripe-adminlogin/master/images/screenshot.png)
 
 ## Known issues

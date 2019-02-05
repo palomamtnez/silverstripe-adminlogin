@@ -3,6 +3,7 @@
 namespace Axyr\SilverStripeAdminLogin;
 
 use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Config\Configurable;
 
 /**
  * Check Access based on remote IP address.
@@ -18,6 +19,8 @@ use SilverStripe\Core\Config\Config;
  */
 class IpAccess
 {
+    use Configurable;
+
     /**
      * @var array
      */
@@ -43,7 +46,6 @@ class IpAccess
      */
     public function __construct($ip = '', $allowedIps = [])
     {
-        parent::__construct();
         $this->ip = $ip;
 
         self::config()->allowed_ips = $allowedIps;

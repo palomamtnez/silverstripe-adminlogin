@@ -2,6 +2,6 @@
 Name: adminloginroutes
 After: '#adminroutes'
 ---
-Director:
+SilverStripe\Control\Director:
   rules:
-    'AdminSecurity//$Action/$ID/$OtherID': 'AdminSecurity'
+    'AdminSecurity//$Action/$ID/$OtherID': 'Axyr\SilverStripeAdminLogin\AdminSecurity'

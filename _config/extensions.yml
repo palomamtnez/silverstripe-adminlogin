@@ -1,9 +1,9 @@
 ---
 Name: securityextensions
 ---
-Security:
+SilverStripe\Security\Security:
   extensions:
-    - AdminLoginExtension
-LeftAndMain:
+    - Axyr\SilverStripeAdminLogin\AdminLoginExtension
+SilverStripe\Admin\LeftAndMain:
   extensions:
-    - LimitAdminAccessExtension
+    - Axyr\SilverStripeAdminLogin\LimitAdminAccessExtension

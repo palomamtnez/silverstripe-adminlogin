@@ -4,6 +4,8 @@ namespace Axyr\SilverStripeAdminLogin;
 
 use SilverStripe\Security\Security;
 use SilverStripe\Core\Config\Config;
+use SilverStripe\Core\Injector\Injector;
+use SilverStripe\View\Requirements;
 use SilverStripe\Control\Controller;
 use SilverStripe\Security\MemberAuthenticator\ChangePasswordForm;
 

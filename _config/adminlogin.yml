@@ -1,0 +1,5 @@
+---
+Name: adminlogin
+---
+Axyr\SilverStripeAdminLogin\IpAccess:
+  enabled: false
