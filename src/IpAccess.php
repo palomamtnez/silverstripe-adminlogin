@@ -48,7 +48,7 @@ class IpAccess
     {
         $this->ip = $ip;
 
-        self::config()->allowed_ips = $allowedIps;
+        //self::config()->allowed_ips = $allowedIps;
     }
 
     /**
@@ -96,11 +96,11 @@ class IpAccess
     }
 
     /**
-     * @param Controller $controller
+     * @param $controller
      *
      * @throws SS_HTTPResponse_Exception
      */
-    public function respondNoAccess(Controller $controller)
+    public function respondNoAccess($controller)
     {
         $response = null;
         if (class_exists('ErrorPage', true)) {
