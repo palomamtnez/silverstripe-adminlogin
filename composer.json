@@ -1,5 +1,5 @@
 {
-    "name": "palomamtnez/silverstripe-adminlogin",
+    "name": "axyr/silverstripe-adminlogin",
     "description": "Use a custom login screen to log in to the admin section",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "login", "module", "cms"],
