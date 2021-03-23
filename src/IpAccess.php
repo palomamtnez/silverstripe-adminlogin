@@ -64,7 +64,7 @@ class IpAccess
      */
     public function getAllowedIps()
     {
-        return self::$allowed_ips ? self::$allowed_ips : (array) self::config()->allowed_ips;
+        return (array) self::config()->allowed_ips;
     }
 
     /**
